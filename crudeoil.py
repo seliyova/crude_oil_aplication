@@ -66,7 +66,7 @@ col1.write(tabel_tampilan)
 #Fitur wajib 1: Membuat Grafiknya
 
 data1=figure(title="Production Chart of Selected Country From 1971 to 2015",x_axis_label=(data_pilihan['Year'], data_pilihan['Production'])
-data1.line(x,y,legend_label='Trend',line_width=4)
+data1.line(data_pilihan['Year'],data_pilihan['Production'],legend_label='Trend',line_width=4)
 st.bokeh_chart(data1,use_container_width=True)
 
 
