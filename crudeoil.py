@@ -64,10 +64,15 @@ col1.write("Representation Table")
 tabel_tampilan=data_pilihan.head(n_tampil)
 col1.write(tabel_tampilan)
 #Fitur wajib 1: Membuat Grafiknya
-
-data1=figure(title="Production Chart of Selected Country From 1971 to 2015",x_axis_label=data_pilihan['Year'], y_axis_label=data_pilihan['Production'])
-data1.line(data_pilihan['Year'],data_pilihan['Production'],legend_label='Trend',line_width=4)
-st.bokeh_chart(data1,use_container_width=True)
+cmap_name = 'tab20c'
+cmap = cm.get_cmap(cmap_name)
+colors = cmap.colors[:len(data_pilihan)]
+fig, ax = plt.subplots()
+ax.bar(data_pilihan['Year'] ,data_pilihan['Production'],color=colors)
+ax.set_title("Production Chart of Selected Country From 1971 to 2015")
+ax.set_ylabel('Oil Production', fontsize=12)
+ax.set_xlabel('Year',fontsize=12)  
+col1.pyplot(fig)
 
 
 
