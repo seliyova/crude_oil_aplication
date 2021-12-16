@@ -72,7 +72,7 @@ ax.bar(data_pilihan['Year'] ,data_pilihan['Production'],color=colors)
 ax.set_title("Production Chart of Selected Country From 1971 to 2015")
 ax.set_ylabel('Oil Production', fontsize=12)
 ax.set_xlabel('Year',fontsize=12)  
-col1.pyplot(fig)
+st.altair_chart(fig, use_container_width=False)
 
 
 ############## Lower Left Column 1 ##############
