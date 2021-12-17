@@ -231,7 +231,7 @@ col2.write(nol_total)
 #Informasi yang menyebutkan: (1) nama lengkap negara, kode negara, region, dan sub-region dengan jumlah produksi terbesar pada tahun T dan keseluruhan tahun. 
 #(1)
 #Berdasarkan Tahun Inputan User (pada Tahun T)
-col1.subheader("Summary")
+col2.subheader("Summary")
 filter=file['tahun']==year
 max_pil=file[filter].sort_values(by=['produksi'], ascending=False).head(1)
 prod=np.asarray(max_pil['produksi'])
@@ -244,9 +244,9 @@ for item in file2:
 kode=np.asarray(kode)
 region=np.asarray(region)
 sub_region=np.asarray(sub_region)
-col1.markdown(f"**Year with the Smallest Total Production is: ** [1983] with amount of production [2076524.432]")
-col1.markdown(f"**Year with the Largest Total Production is : ** [2015] with amount of production [3934946.0]")
-col1.markdown(f"**Country with the Largest Production in {year}: ** \n {negara_max_pil} with amount of production {prod}, code country: {kode}, region: {region}, sub-region: {sub_region}")
+col2.markdown(f"**Year with the Smallest Total Production is: ** [1983] with amount of production [2076524.432]")
+col2.markdown(f"**Year with the Largest Total Production is : ** [2015] with amount of production [3934946.0]")
+col2.markdown(f"**Country with the Largest Production in {year}: ** \n {negara_max_pil} with amount of production {prod}, code country: {kode}, region: {region}, sub-region: {sub_region}")
 
 #Berdasarkan Keseluruhan Tahun
 max_total=file.sort_values(by=['produksi_kumulatif'], ascending=False).head(1)
@@ -260,7 +260,7 @@ for item in file2:
 kode=np.asarray(kode)
 region=np.asarray(region)
 sub_region=np.asarray(sub_region)
-col1.markdown(f"**Country with the Largest Cumulative Production in all Years: ** \n {negara_max_total} with amount of production {prod}, code country: {kode}, region: {region}, sub-region: {sub_region}")
+col2.markdown(f"**Country with the Largest Cumulative Production in all Years: ** \n {negara_max_total} with amount of production {prod}, code country: {kode}, region: {region}, sub-region: {sub_region}")
 
 #(2) nama lengkap negara, kode negara, region, dan sub-region dengan jumlah produksi terkecil (tidak sama dengan nol) pada tahun T dan keseluruhan tahun.
 #(2)
@@ -279,7 +279,7 @@ for item in file2:
 kode=np.asarray(kode)
 region=np.asarray(region)
 sub_region=np.asarray(sub_region)
-col1.markdown(f"**Country with the Smallest Production in {year}: ** \n {negara_min_pil} with amount of production {prod}, code country: {kode}, region: {region}, sub-region: {sub_region}")
+col2.markdown(f"**Country with the Smallest Production in {year}: ** \n {negara_min_pil} with amount of production {prod}, code country: {kode}, region: {region}, sub-region: {sub_region}")
 
 #Berdasarkan Keseluruhan Tahun
 filter3=file['produksi_kumulatif']!=0
@@ -294,4 +294,4 @@ for item in file2:
 kode=np.asarray(kode)
 region=np.asarray(region)
 sub_region=np.asarray(sub_region)
-col1.markdown(f"**Country with the Smallest Cumulative Production in all Years: ** \n {negara_min_total} with amount of production {prod}, code country: {kode}, region: {region}, sub-region: {sub_region}")
+col2.markdown(f"**Country with the Smallest Cumulative Production in all Years: ** \n {negara_min_total} with amount of production {prod}, code country: {kode}, region: {region}, sub-region: {sub_region}")
