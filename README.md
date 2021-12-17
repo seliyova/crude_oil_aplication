@@ -2,7 +2,7 @@
 This repo contains a simple [streamlit](https://streamlit.io) app that shows interactive plots of some statistics about crude oil production over worldwide from 1971 to 2015. The data are obtained from “produksi_minyak_mentah.csv”.
 
 ## Check the live app
-Check out the live app [here](https://share.streamlit.io/seliyova/streamlit_demo/main/crudeoil.py). This demo is hosted with Streamlit sharing, check streamlit.io/sharing for more info.
+Check out the live app [here](https://share.streamlit.io/seliyova/main/crudeoil.py). This demo is hosted with Streamlit sharing, check streamlit.io/sharing for more info.
 
 ## Run the app locally
 ### Install streamlit via pip
@@ -15,7 +15,7 @@ conda install -c conda-forge streamlit
 ```
 ### Run
 ```
-streamlit run https://raw.githubusercontent.com/nurahmadi/streamlit_demo/main/transjakarta.py
+streamlit run https://raw.githubusercontent.com/seliyova/streamlit_demo/main/crudeoil.py
 ```
 ## Required packages
 - Streamlit
