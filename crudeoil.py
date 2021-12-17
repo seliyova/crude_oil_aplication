@@ -182,7 +182,7 @@ year2=col2.number_input("Pick the Year", min_value=1971, max_value=2015)
 filter1=file['produksi']==0
 nol_data=file[filter1].sort_values(by=['produksi'])
 filter2=nol_data['tahun']==year2
-nol_pil=nol_data[filter2].sort_values(by=['produksi']).drop(columns='produksi_kumulatif', axis=1)
+nol_pil=nol_data[filter2].sort_values(by=['produksi']).drop(columns='produksi_kumulatif', axis=1).drop(columns='Total_Production',axis=1)
 negara_nol_pil=nol_pil['nama_negara'].values.tolist()
 list_kode=[]
 list_region=[]
@@ -206,7 +206,7 @@ col2.write(nol_pil)
 #Berdasarkan keseluruhan data (Lanjutan Fitur sebelumnya)
 col2.subheader("List of Countries with Cumulative Zero Crude Oil Production all Years")
 filter3=file['produksi_kumulatif']==0
-nol_total=file[filter3].sort_values(by=['produksi_kumulatif']).drop(columns='produksi', axis=1).drop(columns='tahun',axis=1).drop_duplicates(subset=['nama_negara'])
+nol_total=file[filter3].sort_values(by=['produksi_kumulatif']).drop(columns='produksi', axis=1).drop(columns='tahun',axis=1).drop(columns='Total_Production',axis=1).drop_duplicates(subset=['nama_negara'])
 negara_nol_total=nol_total['nama_negara'].values.tolist()
 list_kode=[]
 list_region=[]
